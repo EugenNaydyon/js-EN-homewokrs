@@ -169,7 +169,6 @@
 //   let message;
 
 //   if (age >= 18) {
-//     // Change this line
 //     message = "You are an adult";
 //   } else {
 //     message = "You are a minor";
@@ -184,3 +183,191 @@
 // checkAge(38);
 
 // === TASK 16 Задача: склад товаров ===
+// function checkStorage(available, ordered) {
+//   let message;
+
+//   if (ordered > available) {
+//     message = "Not enough goods in stock!";
+//   } else {
+//     message = "Order is processed, our manager will contact you.";
+//   }
+//   console.log(message);
+//   return message;
+// }
+
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// checkStorage(200, 20);
+// checkStorage(200, 150);
+// checkStorage(150, 180);
+
+// ==========TASK 17 Комбинированный оператор присвоения =============
+// let a = 5;
+// let b = 10;
+// let c = 15;
+// let d = 20;
+
+// // Change code below this line
+// a += 2;
+// b -= 4;
+// c *= 3;
+// d /= 10;
+
+// ========== TASK 18 Задача: проверка баланса ===============
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+
+//   const totalPrice = pricePerDroid * orderedQuantity;
+
+//   if (totalPrice > customerCredits) {
+//     message = "Insufficient funds!";
+//   } else {
+//     message = `You ordered ${orderedQuantity} droids, you have ${
+//       customerCredits - totalPrice
+//     } credits left`;
+//   }
+//   console.log(message);
+//   // Change code above this line
+//   return message;
+// }
+
+// makeTransaction(3000, 5, 23000);
+// makeTransaction(1000, 3, 15000);
+// makeTransaction(5000, 10, 8000);
+// makeTransaction(2000, 8, 10000);
+// makeTransaction(500, 10, 5000);
+
+// ========= TASK 19 Блок else...if ===========
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+
+//   if (password === null) {
+//     // Change this line
+//     message = "Canceled by user!";
+//   } else if (password === ADMIN_PASSWORD) {
+//     // Change this line
+//     message = "Welcome!";
+//   } else {
+//     message = "Access denied, wrong password!";
+//   }
+
+//   console.log(message);
+//   return message;
+// }
+// checkPassword(null);
+// checkPassword("jqueryismyjam");
+// checkPassword(2525);
+
+// ======= TASK 20 Задача: склад товаров 2.0 ===========
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (ordered === 0) {
+//     message = "There are no products in the order!";
+//   } else if (ordered > available) {
+//     message = "Your order is too large, there are not enough items in stock!";
+//   } else {
+//     message = "The order is accepted, our manager will contact you";
+//   }
+
+//   // Change code above this line
+//   return message;
+// }
+// checkStorage(100, 50);
+// checkStorage(70, 0);
+// checkStorage(200, 20);
+// checkStorage(200, 250);
+// checkStorage(150, 0);
+
+// ====== TASK 21 Логическое «И» (оператор &&) =========
+// function isNumberInRange(start, end, number) {
+//   const isInRange = start <= number && number <= end; // Change this line
+//   console.log(isInRange);
+//   return isInRange;
+// }
+
+// isNumberInRange(10, 30, 17);
+// isNumberInRange(10, 30, 5);
+// isNumberInRange(20, 50, 24);
+// isNumberInRange(20, 50, 76);
+
+// ====== TASK 22 Логическое «ИЛИ» (оператор ||)  ========
+// function checkIfCanAccessContent(subType) {
+//   const canAccessContent = subType === "pro" || subType === "vip"; // Change this line
+//   console.log(canAccessContent);
+//   return canAccessContent;
+// }
+
+// checkIfCanAccessContent("pro");
+// checkIfCanAccessContent("starter");
+// checkIfCanAccessContent("vip");
+// checkIfCanAccessContent("free");
+
+// ======= TASK 23 Логическое «НЕ» (оператор !) =========
+// function isNumberNotInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
+//   const isNotInRange = !isInRange; // Change this line
+//   console.log(isNotInRange);
+//   return isNotInRange;
+// }
+// isNumberNotInRange(10, 30, 17);
+// isNumberNotInRange(10, 30, 5);
+// isNumberNotInRange(20, 50, 24);
+// isNumberNotInRange(20, 50, 76);
+
+// ==== TASK 24 Задача: расчёт скидки ====
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+//   // Change code below this line
+
+//   if (50000 <= totalSpent) {
+//     discount = GOLD_DISCOUNT;
+//   } else if (20000 <= totalSpent && totalSpent <= 50000) {
+//     discount = SILVER_DISCOUNT;
+//   } else if (5000 <= totalSpent && totalSpent <= 20000) {
+//     discount = BRONZE_DISCOUNT;
+//   } else {
+//     discount = BASE_DISCOUNT;
+//   }
+
+//   console.log(discount);
+//   // Change code above this line
+//   return discount;
+// }
+
+// getDiscount(137000);
+// getDiscount(46900);
+// getDiscount(8250);
+// getDiscount(1300);
+// getDiscount(5000);
+// getDiscount(20000);
+// getDiscount(50000);
+
+// ====== TASK 25 Тернарный оператор =========
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+
+//   message =
+//     ordered > available
+//       ? "Not enough goods in stock!"
+//       : "The order is accepted, our manager will contact you";
+
+//   console.log(message);
+//   // Change code above this line
+//   return message;
+// }
+
+// checkStorage(100, 50);
+// checkStorage(100, 130);
+// checkStorage(200, 20);
+// checkStorage(200, 150);
+// checkStorage(150, 180);
+
+// ===== TASK 26 Задача: проверка пароля =====
