@@ -371,3 +371,217 @@
 // checkStorage(150, 180);
 
 // ===== TASK 26 Задача: проверка пароля =====
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+
+//   message =
+//     password === ADMIN_PASSWORD
+//       ? "Access is allowed"
+//       : "Access denied, wrong password!";
+
+//   console.log(message);
+
+//   return message;
+// }
+// checkPassword("jqueryismyjam");
+// checkPassword("angul4r1sl1f3");
+// checkPassword("r3actsux");
+
+// ===== TASK 27 Инструкция switch =====
+// function getSubscriptionPrice(type) {
+//   let price;
+//   // Change code below this line
+
+//   switch (type) {
+//     case "professional": // Change this line
+//       price = 20; // Change this line
+//       break;
+
+//     case "organization": // Change this line
+//       price = 50; // Change this line
+//       break;
+
+//     case "starter": // Change this line
+//       price = 0; // Change this line
+//       break;
+//   }
+//   console.log(price);
+//   // Change code above this line
+//   return price;
+// }
+
+// getSubscriptionPrice("professional");
+// getSubscriptionPrice("organization");
+// getSubscriptionPrice("starter");
+
+// ===== TASK 28 Инструкция switch c блоком default =====
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   let message;
+//   // Change code below this line
+
+//   switch (password) {
+//     case null:
+//       message = "Canceled by user!";
+//       break;
+//     case ADMIN_PASSWORD:
+//       message = "Welcome!";
+//       break;
+//     default:
+//       message = "Access denied, wrong password!";
+//   }
+//   //   console.log(message);
+//   // Change code above this line
+//   return message;
+// }
+// checkPassword("mangohackzor");
+// checkPassword(null);
+// checkPassword("polyhax");
+// checkPassword("jqueryismyjam");
+
+// ===== TASK 29 Задача: доставка товара =====
+// function getShippingCost(country) {
+//   let message;
+//   switch (country) {
+//     case "China":
+//       message = "Shipping to China will cost 100 credits";
+//       break;
+
+//     case "Chile":
+//       message = "Shipping to Chile will cost 250 credits";
+//       break;
+
+//     case "Australia":
+//       message = "Shipping to Australia will cost 170 credits";
+//       break;
+
+//     case "Jamaica":
+//       message = "Shipping to Jamaica will cost 120 credits";
+//       break;
+
+//     default:
+//       message = "Sorry, there is no delivery to your country";
+//   }
+
+//   console.log(message);
+//   return message;
+// }
+
+// getShippingCost("Australia");
+// getShippingCost("Germany");
+// getShippingCost("China");
+// getShippingCost("Chile");
+// getShippingCost("Jamaica");
+// getShippingCost("Sweden");
+
+// ===== TASK 30 Длина строки =====
+// function getNameLength(name) {
+//   const message = `Name ${name} is ${name.length} characters long`;
+//   console.log(message);
+//   return message;
+// }
+
+// getNameLength("Poly");
+// getNameLength("Harambe");
+// getNameLength("Billy");
+// getNameLength("Joe");
+
+// // ===== TASK 31 Индексация элементов строки =====
+// const courseTopic = "JavaScript essentials";
+// // Change code below this line
+
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopic.length - 1];
+
+// console.log(courseTopicLength, firstElement, lastElement);
+
+// ===== TASK 32 Метод slice() =====
+// function getSubstring(string, length) {
+//   const substring = string.slice(0, length); // Change this line
+
+//   console.log(substring);
+
+//   return substring;
+// }
+// getSubstring("Hello world", 3);
+// getSubstring("Hello world", 6);
+// getSubstring("Hello world", 8);
+// getSubstring("Hello world", 11);
+// getSubstring("Hello world", 0);
+
+// ===== TASK 33 Задача: форматирование сообщения =====
+// function formatMessage(message, maxLength) {
+//   let result;
+
+//   result =
+//     message.length <= maxLength ? message : message.slice(0, maxLength) + "...";
+
+//   //     if (message.length <= maxLength) {
+//   //     result = message;
+//   //   } else {
+//   //     result = message.slice(0, maxLength) + "...";
+//   //   }
+//   console.log(result);
+//   return result;
+// }
+
+// formatMessage("Curabitur ligula sapien", 16); //возвращает "Curabitur ligula..."
+// formatMessage("Curabitur ligula sapien", 23); //возвращает "Curabitur ligula sapien"
+// formatMessage("Vestibulum facilisis purus nec", 20); //возвращает "Vestibulum facilisis..."
+// formatMessage("Vestibulum facilisis purus nec", 30); //возвращает "Vestibulum facilisis purus nec"
+// formatMessage("Nunc sed turpis a felis in nunc fringilla", 15); //возвращает "Nunc sed turpis..."
+// formatMessage("Nunc sed turpis a felis in nunc fringilla", 41); //возвращает "Nunc sed turpis a felis in nunc fringilla"
+
+// ===== TASK 34 Методы toLowerCase() и toUpperCase() =====
+// function normalizeInput(input) {
+//   const normalizedInput = input.toLowerCase(); // Change this line
+
+//   console.log(normalizedInput);
+//   return normalizedInput;
+// }
+
+// normalizeInput("Hello world"); //возвращает "hello world"
+// normalizeInput("This ISN'T SpaM"); //возвращает "this isn't spam"
+// normalizeInput("Big SALE"); //возвращает "big sale"
+
+// ===== TASK 35 Метод includes() =====
+// function checkForName(fullName, name) {
+//   const result = fullName.includes(name); // Change this line
+
+//   console.log(result);
+//   return result;
+// }
+
+// checkForName("Egor Kolbasov", "Egor"); //возвращает true
+// checkForName("Egor Kolbasov", "egor"); //возвращает false
+// checkForName("Egor Kolbasov", "egOr"); //возвращает false
+// checkForName("Egor Kolbasov", "Zhenya"); //возвращает false
+// checkForName("Vadim Nekrasov", "Vadim"); //возвращает true
+// checkForName("Vadim Nekrasov", "vadim"); //возвращает false
+// checkForName("Vadim Nekrasov", "Dima"); //возвращает false
+
+// ===== TASK 36 Задача: проверка спама =====
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
+
+//   const badWord1 = "spam";
+//   const badWord2 = "sale";
+
+//   result =
+//     message.toLowerCase().includes(badWord1) ||
+//     message.toLowerCase().includes(badWord2);
+
+//   console.log(result);
+//   // Change code above this line
+//   return result;
+// }
+// checkForSpam("Latest technology news"); // возвращает false
+// checkForSpam("JavaScript weekly newsletter"); //возвращает false
+// checkForSpam("Get best sale offers now!"); // возвращает true
+// checkForSpam("Amazing SalE, only tonight!"); // возвращает true
+// checkForSpam("Trust me, this is not a spam message"); // возвращает true
+// checkForSpam("Get rid of sPaM emails. Our book in on sale!"); // возвращает true
+// checkForSpam("[SPAM] How to earn fast money?"); // возвращает true
