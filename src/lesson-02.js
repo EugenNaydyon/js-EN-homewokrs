@@ -109,3 +109,20 @@ function checkStorage(available, ordered) {
 // console.log(lastElement);
 
 // ==== TASK 09 Задача: Крайние элементы массива ====
+// function getExtremeElements(array) {
+//   console.log("sourceArray:", array);
+
+//   const numbersElementsToDel = array.length - 2;
+//   console.log("Number the elements to delete:", numbersElementsToDel);
+
+//   const deletedArrayElements = array.splice(1, array.length - 2);
+//   console.log("deletedArrayElements:", deletedArrayElements);
+//   console.log("newArray:", array);
+//   console.log("=======================================================");
+// }
+
+// getExtremeElements([1, 2, 3, 4, 5]); // возвращает [1, 5]
+// getExtremeElements(["Earth", "Mars", "Venus"]); //возвращает ["Earth", "Venus"]
+// getExtremeElements(["apple", "peach", "pear", "banana"]); // возвращает ["apple", "banana"]
+
+// ==== TASK 10 Метод строк split() ====
