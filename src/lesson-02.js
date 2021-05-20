@@ -126,3 +126,28 @@ function checkStorage(available, ordered) {
 // getExtremeElements(["apple", "peach", "pear", "banana"]); // возвращает ["apple", "banana"]
 
 // ==== TASK 10 Метод строк split() ====
+// function splitMessage(message, delimeter) {
+//   let words;
+
+//   words = message.split(delimeter);
+//   console.log(words);
+
+//   return words;
+// }
+
+// splitMessage("Mango hurries to the train", " "); //возвращает ["Mango", "hurries", "to", "the", "train"]
+// splitMessage("Mango", ""); // возвращает ["M", "a", "n", "g", "o"]
+// splitMessage("best_for_week", "_"); // возвращает ["best", "for", "week"]
+
+// ==== TASK 11 Задача: гравировка украшений ====
+function calculateEngravingPrice(message, pricePerWord) {
+  const numbersOfWords = message.split(" ");
+  const totalPrice = numbersOfWords.length * pricePerWord;
+  console.log(numbersOfWords);
+  console.log(totalPrice);
+}
+
+calculateEngravingPrice("JavaScript is in my blood", 10); // возвращает 50
+calculateEngravingPrice("JavaScript is in my blood", 20); // возвращает 100
+calculateEngravingPrice("Web-development is creative work", 40); // возвращает 160
+calculateEngravingPrice("Web-development is creative work", 20); // возвращает 80
