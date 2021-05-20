@@ -257,19 +257,75 @@ function checkStorage(available, ordered) {
 // }
 
 // ===== TASK 20 Задача: подсчёт суммы покупки =====
-function calculateTotalPrice(order) {
-  let total = 0;
-  let number = order.length - 1;
-  console.log(number);
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // let number = order.length;
+//   // console.log(number);
 
-  for (let i = 0; i < number; i += 1) {
-    total += order[i];
-  }
+//   for (let i = 0; i < order.length; i += 1) {
+//     total = total + order[i];
+//     console.log(order[i]);
+//   }
+//   console.log(total);
+//   console.log("================");
+//   return total;
+// }
 
-  return total;
-}
+// calculateTotalPrice([12, 85, 37, 4]); //возвращает 138
+// calculateTotalPrice([164, 48, 291]); //возвращает 503
+// calculateTotalPrice([412, 371, 94, 63, 176]); //возвращает 1116
+// // calculateTotalPrice(); // со случайным массивом возвращает правильное значение
 
-calculateTotalPrice([12, 85, 37, 4]); //возвращает 138
-calculateTotalPrice([164, 48, 291]); //возвращает 503
-calculateTotalPrice([412, 371, 94, 63, 176]); //возвращает 1116
-calculateTotalPrice(); // со случайным массивом возвращает правильное значение
+// ===== TASK 21 Задача: поиск самого длинного слова =====
+// function findLongestWord(string) {
+//   let stringArray = string.split(" ");
+//   let longestWord = stringArray[0];
+
+//   for (const wordArray of stringArray) {
+//     if (wordArray.length > longestWord.length) {
+//       longestWord = wordArray;
+//     }
+//   }
+//   console.log(longestWord);
+// }
+
+// findLongestWord("The quick brown fox jumped over the lazy dog"); //возвращает jumped
+// findLongestWord("Google do a roll"); //возвращает Google
+// findLongestWord("May the force be with you"); //возвращает force
+// // findLongestWord(); //со случайной строкой возвращает правильное значение
+
+// ===== TASK 22 Метод push() =====
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+
+//   for (let i = min; i <= max; i += 1) {
+//     numbers.push(i);
+//   }
+//   console.log(numbers);
+//   return numbers;
+// }
+
+// createArrayOfNumbers(1, 3); // возвращает [1, 2, 3]
+// createArrayOfNumbers(14, 17); // возвращает [14, 15, 16, 17]
+// createArrayOfNumbers(29, 34); // возвращает [29, 30, 31, 32, 33, 34]
+// // createArrayOfNumbers(); // со случайными min и max возвращает правильный массив
+
+// ===== TASK 23 Задача: фильтрация массива чисел =====
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   for (const number of numbers) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+//   console.log(filteredNumbers);
+// }
+
+// filterArray([1, 2, 3, 4, 5], 3); // возвращает [4, 5]
+// filterArray([1, 2, 3, 4, 5], 4); // возвращает [5]
+// filterArray([1, 2, 3, 4, 5], 5); // возвращает []
+// filterArray([12, 24, 8, 41, 76], 38); // возвращает [41, 76]
+// filterArray([12, 24, 8, 41, 76], 20); // возвращает [24, 41, 76]
+// // filterArray() со случайным массивом и числом возвращает правильный массив
+
+// ===== TASK 24 Метод includes() =====
