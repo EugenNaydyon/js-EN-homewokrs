@@ -329,3 +329,190 @@ function checkStorage(available, ordered) {
 // // filterArray() со случайным массивом и числом возвращает правильный массив
 
 // ===== TASK 24 Метод includes() =====
+// function checkFruit(fruit) {
+//   const fruits = ["apple", "plum", "pear", "orange"];
+//   console.log(fruits.includes(fruit));
+//   return fruits.includes(fruit); // Change this line
+// }
+// checkFruit("plum"); // возвращает true
+// checkFruit("mandarin"); // возвращает false
+// checkFruit("pear"); // возвращает true
+// checkFruit("Pear"); // возвращает false
+// checkFruit("apple"); // возвращает true
+
+// ===== TASK 25 Задача: общие элементы =====
+// function getCommonElements(array1, array2) {
+//   const repitedElementsArray = [];
+
+//   for (const element of array1) {
+//     if (array2.includes(element)) {
+//       repitedElementsArray.push(element);
+//     }
+//   }
+//   console.log(repitedElementsArray);
+//   return repitedElementsArray;
+// }
+
+// getCommonElements([1, 2, 3], [2, 4]); // возвращает [2]
+// getCommonElements([1, 2, 3], [2, 1, 17, 19]); // возвращает [1, 2]
+// getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]); // возвращает [12, 27, 3]
+// getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]); // возвращает [10, 30, 40]
+// getCommonElements([1, 2, 3], [10, 20, 30]); // возвращает []
+
+// ===== TASK 26 Цикл for...of =====
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (const element of order) {
+//     total += element;
+//   }
+
+//   console.log(total);
+//   return total;
+// }
+// calculateTotalPrice([12, 85, 37, 4]); // возвращает 138
+// calculateTotalPrice([164, 48, 291]); // возвращает 503
+// calculateTotalPrice([412, 371, 94, 63, 176]); // возвращает 1116
+// calculateTotalPrice([]); // возвращает 0
+
+// ===== TASK 27 Зачада: фильтрация массива чисел 2.0 =====
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const filteredNumbers = [];
+
+//   for (const number of numbers) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   const number = numbers[i];
+
+//   //   if (number > value) {
+//   //     filteredNumbers.push(number);
+//   //   }
+//   // }
+
+//   console.log(filteredNumbers);
+//   return filteredNumbers;
+// }
+
+// filterArray([1, 2, 3, 4, 5], 3); // возвращает [4, 5]
+// filterArray([1, 2, 3, 4, 5], 4); // возвращает [5]
+// filterArray([1, 2, 3, 4, 5], 5); // возвращает []
+// filterArray([12, 24, 8, 41, 76], 38); // возвращает [41, 76]
+// filterArray([12, 24, 8, 41, 76], 20); // возвращает [24, 41, 76]
+
+// ===== TASK 28 Оператор % =====
+
+// const a = 3 % 1;
+// console.log(a);
+
+// const b = 4 % 3;
+// console.log(b);
+
+// const c = 11 % 8;
+// console.log(c);
+
+// const d = 12 % 7;
+// console.log(d);
+
+// const e = 8 % 3;
+// console.log(e);
+
+// Объявлена переменная a
+// Значение переменной a это число 0
+// Объявлена переменная b
+// Значение переменной b это число 1
+// Объявлена переменная c
+// Значение переменной c это число 3
+// Объявлена переменная d
+// Значение переменной d это число 5
+// Объявлена переменная e
+// Значение переменной e это число 2
+
+// ===== TASK 29 Задача: чётные числа =====
+// function getEvenNumbers(start, end) {
+//   let evenNumbersArray = [];
+
+//   for (let i = start; i <= end; i += 1) {
+//     console.log(i);
+//     if (i % 2 === 0) {
+//       evenNumbersArray.push(i);
+//     }
+//   }
+//   console.log(evenNumbersArray);
+//   console.log("====================");
+// }
+// getEvenNumbers(2, 5); // возвращает [2, 4]
+// getEvenNumbers(3, 11); // возвращает [4, 6, 8, 10]
+// getEvenNumbers(6, 12); // возвращает [6, 8, 10, 12]
+// getEvenNumbers(8, 8); // возвращает [8]
+// getEvenNumbers(7, 7); // возвращает []
+
+// ===== TASK 30 Оператор break =====
+// const start = 6;
+// const end = 27;
+// let number;
+
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break;
+//   }
+// }
+// console.log(number);
+// -------------------------------------------------
+// for (let i = 0; i <= 5; i += 1) {
+//   console.log(i);
+
+//   if (i === 3) {
+//     console.log("Нашли число 3, прерываем выполнение цикла");
+//     break;
+//   }
+// }
+
+// console.log("Лог после цикла");
+
+// ===== TASK 31 Оператор break vs return в функции =====
+// function findNumber(start, end, divisor) {
+//   // Change code below this line
+//   let number;
+
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       // number = i;
+//       // break;
+//       console.log(i);
+//       return i;
+//     }
+//   }
+
+//   // return number;
+//   // Change code above this line
+// }
+
+// findNumber(2, 6, 5); // возвращает 5
+// findNumber(8, 17, 3); // возвращает 9
+// findNumber(6, 9, 4); // возвращает 8
+// findNumber(16, 35, 7); // возвращает 21
+
+// ===== TASK 32 Задача: функция includes() =====
+// function includes(array, value) {
+//   for (let element of array) {
+//     if (element === value) {
+//       console.log("true");
+//       return "true";
+//     }
+//   }
+//   console.log("false");
+//   return "false";
+// }
+
+// includes([1, 2, 3, 4, 5], 3); // возвращает true
+// includes([1, 2, 3, 4, 5], 17); // возвращает false
+// includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"); // возвращает true
+// includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"); // возвращает false
+// includes(["apple", "plum", "pear", "orange"], "plum"); // возвращает true
+// includes(["apple", "plum", "pear", "orange"], "kiwi"); // возвращает false
