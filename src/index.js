@@ -664,6 +664,17 @@
 
 // ====== TASK 31 Операция rest для сбора всех аргументов функции =====
 // Change code below this line
-function add() {
-  // Change code above this line
+function add(...args) {
+  console.log(args);
+  let argsSum = 0;
+
+  for (let i = 0; i <= args.length; i += 1) {
+    argsSum += args[i];
+    console.log(argsSum);
+  }
+  return argsSum;
 }
+add(15, 27); // возвращает 42
+add(12, 4, 11, 48); // возвращает 75
+add(32, 6, 13, 19, 8); // возвращает 78
+add(74, 11, 62, 46, 12, 36); // возвращает 241
