@@ -376,18 +376,294 @@
 // getProductPrice("Engine"); // возвращает null
 
 // ====== TASK 19 Задача. Коллекция значений свойства =====
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function getAllPropValues(propName) {
-  // Change code below this line
+// function getAllPropValues(propName) {
+//   const propValue = [];
+
+//   for (const product of products) {
+//     // console.log(product);
+//     const keysProduct = Object.keys(product);
+//     // console.log(keysProduct);
+
+//     for (const key of keysProduct) {
+//       if (key === propName) {
+//         // console.log(product[key]);
+//         propValue.push(product[key]);
+//       }
+//     }
+//   }
+//   console.log(propValue);
+// }
+
+// getAllPropValues("name"); // возвращает ["Radar", "Scanner", "Droid", "Grip"]
+// // getAllPropValues("quantity"); // возвращает [4, 3, 7, 9]
+// // getAllPropValues("price"); // возвращает [1300, 2700, 400, 1200]
+// getAllPropValues("category"); // возвращает []
+
+// ====== TASK 20 Задача. Общая стоимость товара =====
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//   let totalPrice = 0;
+
+//   for (const product of products) {
+//     // console.log(product);
+//     // console.log(product.name);
+//     // console.log(product.price);
+//     if (product.name === productName) {
+//       totalPrice = product.price * product.quantity;
+//     }
+//   }
+//   console.log(totalPrice);
+// }
+
+// calculateTotalPrice("Blaster"); // возвращает 0
+// calculateTotalPrice("Radar"); // возвращает 5200
+// calculateTotalPrice("Droid"); // возвращает 2800
+// calculateTotalPrice("Grip"); // возвращает 10800
+// calculateTotalPrice("Scanner"); // возвращает 8100
+
+//======== example =======
+
+// const hotel = {
+//   name: "Resort Hotel",
+//   stars: 5,
+//   capacity: 100,
+// };
+
+// /*
+//  * Посмотрите в консоли из каких двух элементов состоит каждый подмассив.
+//  * Первый элемент это ключ свойства, второй это значение.
+//  */
+// const entries = Object.entries(hotel);
+
+// /*
+//  * На каждой итерации по entries выберем первый элемент подмассива (ключ)
+//  * в переменную key, а второй (значение) в переменную value
+//  */
+// for (const entry of entries) {
+//   const key = entry[0];
+//   const value = entry[1];
+
+//   console.log(`${key}: ${value}`);
+// }
+
+// /*
+//  * name: Resort Hotel
+//  * stars: 5
+//  * capacity: 100
+//  */
+
+// ====== TASK 21 Деструктуризация объектов =====
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// // const yesterday = highTemperatures.yesterday;
+// // const today = highTemperatures.today;
+// // const tomorrow = highTemperatures.tomorrow;
+
+// const { yesterday, today, tomorrow } = highTemperatures;
+// console.log(yesterday, today, tomorrow);
+// // Change code above this line
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// console.log(meanTemperature);
+
+// ====== TASK 22 Значения по умолчанию =====
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// // const yesterday = highTemperatures.yesterday;
+// // const today = highTemperatures.today;
+// // const tomorrow = highTemperatures.tomorrow;
+// // const icon = highTemperatures.icon;
+
+// const {
+//   yesterday,
+//   today,
+//   tomorrow,
+//   icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// } = highTemperatures;
+
+// console.log(highTemperatures);
+// // Change code above this line
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// console.log(meanTemperature);
+
+// ====== TASK 23 Изменение имени переменной =====
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// // const highYesterday = highTemperatures.yesterday;
+// // const highToday = highTemperatures.today;
+// // const highTomorrow = highTemperatures.tomorrow;
+// // const highIcon = highTemperatures.icon;
+
+// const {
+//   yesterday: highYesterday,
+//   today: highToday,
+//   tomorrow: highTomorrow,
+//   icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// } = highTemperatures;
+
+// console.log(highTemperatures);
+
+// // Change code above this line
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// console.log(meanTemperature);
+
+// ====== TASK 24 Деструктуризация в циклах =====
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+// // Change code below this line
+
+// for (const { hex, rgb } of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
+
+// console.log(hexColors);
+// console.log(rgbColors);
+
+// ====== TASK 25 Глубокая деструктуризация =====
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
+// // Change code below this line
+
+// const {
+//   today: {
+//     low: lowToday,
+//     high: highToday,
+//     icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: lowTomorrow,
+//     high: highTomorrow,
+//     icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+//   },
+// } = forecast;
+
+// console.log(highToday, lowToday, todayIcon);
+// console.log(highTomorrow, lowTomorrow, tomorrowIcon);
+// const highToday = forecast.today.high;
+// const lowToday = forecast.today.low;
+// const todayIcon = forecast.today.icon;
+
+// const highTomorrow = forecast.tomorrow.high;
+// const lowTomorrow = forecast.tomorrow.low;
+// const tomorrowIcon = forecast.tomorrow.icon;
+
+// ====== TASK 26 Паттерн «Объект настроек» =====
+// Change code below this line
+// function calculateMeanTemperature(forecast) {
+//   const {today: {low: todayLow, high: todayHigh},
+//           tomorrow: {low: tomorrowLow, high: tomorrowHigh}
+//    } = forecast;
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+// ====== TASK 27 Операция spread при передаче аргументов =====
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// // Change code below this line
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
+
+// console.log(bestScore);
+// console.log(worstScore);
+
+// ====== TASK 28 Операция spread при создании нового массива =====
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// // Change code below this line
+// const allScores = [
+//   ...firstGroupScores,
+//   ...secondGroupScores,
+//   ...thirdGroupScores,
+// ];
+// console.log(allScores);
+
+// const bestScore = Math.max(...allScores);
+// console.log(bestScore);
+
+// const worstScore = Math.min(...allScores);
+// console.log(worstScore);
+
+// ====== TASK 29 Операция spread при создании нового объекта =====
+// const defaultSettings = {
+//   theme: "light",
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+// // Change code below this line
+// const finalSettings = { ...defaultSettings, ...overrideSettings };
+// console.log(finalSettings);
+
+// ====== TASK 30 Задача. Карточки задач =====
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//   // Change code below this line
+//   const newData = { completed, category, priority, ...data };
+//   // Change code above this line
+//   console.log(newData);
+//   return newData;
+// }
+
+// makeTask({}); // возвращает { category: "General", priority: "Normal", completed: false }
+// makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }); // возвращает { category: "Homemade", priority: "Low", text: "Take out the trash", completed: false }
+// makeTask({ category: "Finance", text: "Take interest" }); // возвращает { category: "Finance", priority: "Normal", text: "Take interest", completed: false }
+// makeTask({ priority: "Low", text: "Choose shampoo" }); // возвращает { category: "General", priority: "Low", text: "Choose shampoo", completed: false }
+// makeTask({ text: "Buy bread" }); // возвращает { category: "General", priority: "Normal", text: "Buy bread", completed: false }
+
+// ====== TASK 31 Операция rest для сбора всех аргументов функции =====
+// Change code below this line
+function add() {
+  // Change code above this line
 }
-
-getAllPropValues("name"); // возвращает ["Radar", "Scanner", "Droid", "Grip"]
-getAllPropValues("quantity"); // возвращает [4, 3, 7, 9]
-getAllPropValues("price"); // возвращает [1300, 2700, 400, 1200]
-getAllPropValues("category"); // возвращает []
