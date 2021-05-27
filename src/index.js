@@ -664,17 +664,143 @@
 
 // ====== TASK 31 Операция rest для сбора всех аргументов функции =====
 // Change code below this line
-function add(...args) {
-  console.log(args);
-  let argsSum = 0;
+// function add(...args) {
+//   let sumArgs = 0;
 
-  for (let i = 0; i <= args.length; i += 1) {
-    argsSum += args[i];
-    console.log(argsSum);
-  }
-  return argsSum;
-}
-add(15, 27); // возвращает 42
-add(12, 4, 11, 48); // возвращает 75
-add(32, 6, 13, 19, 8); // возвращает 78
-add(74, 11, 62, 46, 12, 36); // возвращает 241
+//   for (const arg of args) {
+//     sumArgs += arg;
+//   }
+//   console.log(sumArgs);
+//   return sumArgs;
+// }
+// add(15, 27); // возвращает 42
+// add(12, 4, 11, 48); // возвращает 75
+// add(32, 6, 13, 19, 8); // возвращает 78
+// add(74, 11, 62, 46, 12, 36); // возвращает 241
+
+// ====== TASK 32 Операция rest для сбора части аргументов функции =====
+// Change code below this line
+// function addOverNum(firstArg, ...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+//     if (arg > firstArg) {
+//       total += arg;
+//     }
+//   }
+//   console.log(total);
+//   return total;
+//   // Change code above this line
+// }
+// addOverNum(50, 15, 27); // возвращает 0
+// addOverNum(10, 12, 4, 11, 48, 10, 8); // возвращает 71
+// addOverNum(15, 32, 6, 13, 19, 8); // возвращает 51
+// addOverNum(20, 74, 11, 62, 46, 12, 36); // возвращает 218
+
+// ====== TASK 33 Задача. Массив совпадений =====
+// Change code below this line
+// function findMatches(...args) {
+//   const matches = []; // Don't change this line
+
+//   for (let i = 1; i < args.length; i += 1) {
+//     if (args[0].includes(args[i])) {
+//       matches.push(args[i]);
+//     }
+//   }
+//   console.log(matches);
+//   // Change code above this line
+//   return matches;
+// }
+// findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7); // возвращает [1, 2]
+// findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2); // возвращает [17, 89, 2]
+// findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41); // возвращает [24, 9, 41]
+// findMatches([63, 11, 8, 29], 4, 7, 16); // возвращает []
+
+// ====== TASK 34 Методы объекта =====
+// const bookShelf = {
+
+//   books: ["The last kingdom", "The guardian of dreams"],
+//   getBooks() {
+//     console.log("Возвращаем все книги");
+//     return "Returning all books";
+//   },
+//   addBook(bookName) {
+//     console.log(`Adding book ${bookName}`);
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     console.log(`Deleting book ${bookName}`);
+//     return `Deleting book ${bookName}`;
+//   },
+//   updateBook(oldName, newName) {
+//     console.log(`Updating book ${oldName} to ${newName}`);
+//     return `Updating book ${oldName} to ${newName}`;
+//   },
+//   // Change code above this line
+// };
+// bookShelf.getBooks(); // возвращает строку "Возвращаем все книги"
+
+// bookShelf.addBook("Haze"); // возвращает строку "Adding book Haze"
+
+// bookShelf.removeBook("Red sunset"); // возвращает строку "Deleting book Red sunset"
+
+// bookShelf.updateBook("Sands of dune", "Dune"); // возвращает строку "Updating book Sands of dune to Dune"
+
+// ====== TASK 35 Доступ к свойствам объекта в его методах =====
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//   updateBook(oldName, newName) {
+//     const bookIndex = this.books.indexOf(oldName);
+//     this.books.splice(bookIndex, 1);
+//     this.books.splice(bookIndex, 0, newName);
+//
+//   },
+// };
+
+// bookShelf.updateBook("Haze", "Dungeon chronicles");
+// //, значение свойства books это массив ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+
+// // bookShelf.updateBook("The last kingdom", "Dune");
+// //, значение свойства books это массив ["Dune", "Haze", "The guardian of dreams"]
+
+// ====== TASK 36 Задача. Лавка зелий «У старой жабы» =====
+// const atTheOldToad = {
+//   potions: [],
+// };
+// console.log(atTheOldToad.potions);
+
+// ====== TASK 37 Задача. Получаем все зелья =====
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+
+//   getPotions() {
+//     return atTheOldToad.potions;
+//   },
+// };
+// console.log(atTheOldToad.potions);
+
+// ====== TASK 38 Задача. Добавляем новое зелье =====
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   addPotion(potionName) {
+//     // const potionsLength = this.potions.length;
+//     // console.log(potionsLength);
+//     this.potions.splice(this.potions.length + 1, 0, potionName);
+//     console.log(atTheOldToad.potions);
+//   },
+// };
+
+// atTheOldToad.addPotion("Invisible");
+// //, в свойстве potions будет массив ['Speed potion', 'Dragon breath', 'Stone skin', 'Invisible']
+
+// atTheOldToad.addPotion("Зелье силы");
+// //, в свойстве potions будет массив ['Speed potion', 'Dragon breath', 'Stone skin', 'Invisible', 'Power potion']
+
+// ====== TASK 39 Задача. Удаляем зелье =====
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    // Change code below this line
+    // Change code above this line
+  },
+};
