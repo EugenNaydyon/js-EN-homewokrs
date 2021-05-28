@@ -844,70 +844,39 @@ const atTheOldToad = {
     { name: "Dragon breath", price: 780 },
     { name: "Stone skin", price: 520 },
   ],
-
+  // Change code below this line
   getPotions() {
-    console.log(atTheOldToad.potions);
     return this.potions;
   },
-
-  // addPotion(potionName) {
-  //   const { potions } = this;
-  //   const { name } = potionName;
-  //   for (let i = 0; i < potions.length; i += 1) {
-  //     if (potions[i].name === name) {
-  //       console.log(`Potion ${name} is already equipped!`);
-  //       return `Potion ${name} is already equipped!`;
-  //     }
-  //     potions.push(potionName);
-  //     console.log(name);
-  //   }
-  // },
-
   addPotion(potionName) {
-    console.log(this.potions["name"]);
-    //   for (const potion of this.potions) {
-    //     // console.log(potion);
-    //     // console.log(potion.name);
-    //     // console.log(potionName.name);
-
-    if (this.potions.name === potionName.name) {
-      console.log(`Potion "${potionName.name}" is already equipped!`);
-      return `Potion ${potionName} is already equipped!`;
+    const { potions } = this;
+    const { name } = potionName;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === name) {
+        return `Potion ${name} is already equipped!`;
+      }
+      potions.push(potionName);
     }
-    // }
-    //   // if (this.potions.includes(potionName)) {
-    //   //   console.log(`Potion ${potionName} is already equipped!`);
-    //   //   return `Potion ${potionName} is already equipped!`;
-    //   // }
-
-    this.potions.push(potionName);
-    console.log(atTheOldToad.potions);
   },
-
   removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
-
-    if (potionIndex === -1) {
-      console.log(`Potion ${potionName} is not in inventory!`);
-      return `Potion ${potionName} is not in inventory!`;
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === potionName) {
+        potions.splice(i, 1);
+        return potions;
+      }
     }
-
-    this.potions.splice(potionIndex, 1);
-    console.log(atTheOldToad.potions);
+    return `Potion ${potionName} is not in inventory!`;
   },
-
   updatePotionName(oldName, newName) {
-    console.log(this.potions);
-    const potionIndex = this.potions.indexOf(oldName);
-    console.log(potionIndex);
-
-    if (potionIndex === -1) {
-      console.log(`Potion ${oldName} is not in inventory!`);
-      return `Potion ${oldName} is not in inventory!`;
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === oldName) {
+        potions[i].name = newName;
+        return potions;
+      }
     }
-
-    this.potions.splice(potionIndex, 1, newName);
-    console.log(atTheOldToad.potions);
+    return `Potion ${oldName} is not in inventory!`;
   },
   // Change code above this line
 };
@@ -927,7 +896,7 @@ const atTheOldToad = {
 // atTheOldToad.addPotion({ name: "Power potion", price: 270 });
 // в массиве potions последним элементом будет этот объект
 
-atTheOldToad.addPotion({ name: "Speed potion", price: 460 });
+// atTheOldToad.addPotion({ name: "Speed potion", price: 460 });
 // НЕ РАБОТАЕТ ЭТА ЧАСТЬ
 
 // Значение свойства atTheOldToad.removePotion это метод объекта
