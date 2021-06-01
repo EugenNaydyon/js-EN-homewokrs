@@ -144,6 +144,18 @@ const orders = [
 ];
 
 // Пиши код ниже этой строки
-function composeMessage(position) {}
-
 const messages = [];
+// console.log(messages);
+// console.log(orders.length);
+
+function composeMessage(position) {
+  // for (let i = 0; i >= orders.length; i += 1) {
+  //   let orderState;
+  console.log(orders.length);
+  // }
+}
+
+orders.showOrederState = composeMessage;
+// создал св-во объекта orders и присвоил ему ссылку на функцию;
+console.log(orders);
+orders.showOrederState(); // вызвал функцию composeMessage из метода объекта orders;
