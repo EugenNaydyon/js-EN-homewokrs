@@ -137,25 +137,75 @@
 // console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
 
 // ===== TASK 07 Метод call ======
-const orders = [
-  { email: "solomon@topmail.ua", dish: "Burger" },
-  { email: "artemis@coldmail.net", dish: "Pizza" },
-  { email: "jacob@mail.com", dish: "Taco" },
-];
+// const orders = [
+//   { email: "solomon@topmail.ua", dish: "Burger" },
+//   { email: "artemis@coldmail.net", dish: "Pizza" },
+//   { email: "jacob@mail.com", dish: "Taco" },
+// ];
 
+// function composeMessage(position) {
+//   console.log(
+//     `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`
+//   );
+//   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// }
+// const messages = [];
+
+// for (let i = 0; i < orders.length; i += 1) {
+//   messages.push(composeMessage.call(orders[i], i + 1));
+// }
+// ++++++++++++++++++++++++++++++++++++++++++++++++++
 // Пиши код ниже этой строки
-const messages = [];
-// console.log(messages);
-// console.log(orders.length);
+// const messages = [];
+// // console.log(messages);
+// // console.log(orders.length);
 
-function composeMessage(position) {
-  // for (let i = 0; i >= orders.length; i += 1) {
-  //   let orderState;
-  console.log(orders.length);
-  // }
+// function composeMessage(position) {
+//   // for (let i = 0; i >= orders.length; i += 1) {
+//   //   let orderState;
+//   console.log(orders.length);
+//   // }
+// }
+
+// orders.showOrederState = composeMessage;
+// // создал св-во объекта orders и присвоил ему ссылку на функцию;
+// console.log(orders);
+// orders.showOrederState(); // вызвал функцию composeMessage из метода объекта orders;
+
+// ===== TASK 08 Метод apply ======
+// const orders = [
+//   { email: "solomon@topmail.ua", dish: "Burger" },
+//   { email: "artemis@coldmail.net", dish: "Pizza" },
+//   { email: "jacob@mail.com", dish: "Taco" },
+// ];
+
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
+//   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// }
+
+// const messages = [];
+// for (let i = 0; i < orders.length; i++) {
+//   const msg = composeMessage.apply(orders[i], [i + 1]);
+//   messages.push(msg);
+// }
+
+// ===== TASK 09 Метод bind ======
+const pizzaPalace = {
+  company: "Pizza Palace",
+};
+
+const burgerShack = {
+  company: "Burger Shack",
+};
+
+function composeMessage(customerName) {
+  return `${customerName}, всегда рады вас видеть в «${this.company}».`;
 }
+// Пиши код ниже этой строки
 
-orders.showOrederState = composeMessage;
-// создал св-во объекта orders и присвоил ему ссылку на функцию;
-console.log(orders);
-orders.showOrederState(); // вызвал функцию composeMessage из метода объекта orders;
+const pizzaPalaceComposer = composeMessage;
+const pizzaPalaceMessage = pizzaPalaceComposer("Манго");
+
+const burgerShackComposer = composeMessage;
+const burgerShackMessage = burgerShackComposer("Поли");
