@@ -191,21 +191,65 @@
 // }
 
 // ===== TASK 09 Метод bind ======
-const pizzaPalace = {
-  company: "Pizza Palace",
+// const pizzaPalace = {
+//   company: "Pizza Palace",
+// };
+
+// const burgerShack = {
+//   company: "Burger Shack",
+// };
+
+// function composeMessage(customerName) {
+//   console.log(`${customerName}, всегда рады вас видеть в «${this.company}».`);
+//   return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+// }
+// // Пиши код ниже этой строки
+
+// const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+// const pizzaPalaceMessage = pizzaPalaceComposer("Манго");
+
+// const burgerShackComposer = composeMessage.bind(burgerShack);
+// const burgerShackMessage = burgerShackComposer("Поли");
+
+// pizzaPalaceComposer("Манго");
+// burgerShackComposer("Поли");
+
+// ===== TASK 10 Метод bind и методы объекта ======
+const service = {
+  mailingList: ["mango@mail.com", "poly@hotmail.de", "ajax@jmail.net"],
+  subscribe(email) {
+    this.mailingList.push(email);
+    return `Почта ${email} добавлена в рассылку.`;
+  },
+  unsubscribe(email) {
+    this.mailingList = this.mailingList.filter((e) => e !== email);
+    return `Почта ${email} удалена из рассылки.`;
+  },
 };
 
-const burgerShack = {
-  company: "Burger Shack",
-};
-
-function composeMessage(customerName) {
-  return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+function logAndInvokeAction(email, action) {
+  console.log(`Выполняем действие с ${email}.`);
+  return action(email);
 }
-// Пиши код ниже этой строки
 
-const pizzaPalaceComposer = composeMessage;
-const pizzaPalaceMessage = pizzaPalaceComposer("Манго");
+const firstInvoke = logAndInvokeAction(
+  "kiwi@mail.uk",
+  service.subscribe.bind(service)
+);
+console.log(firstInvoke);
+// Почта kiwi@mail.uk добавлена в рассылку.
 
-const burgerShackComposer = composeMessage;
-const burgerShackMessage = burgerShackComposer("Поли");
+console.log(service.mailingList);
+/* ['mango@mail.com', 
+    'poly@hotmail.de', 
+    'ajax@jmail.net', 
+    'kiwi@mail.uk']*/
+
+const secondInvoke = logAndInvokeAction(
+  "poly@hotmail.de",
+  service.unsubscribe.bind(service)
+);
+console.log(secondInvoke);
+// Почта poly@hotmail.de удалена из рассылки.
+
+console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
