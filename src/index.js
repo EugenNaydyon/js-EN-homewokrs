@@ -60,8 +60,89 @@
 // }
 
 // === TASK 05 Свойство prototype ===
-function Car({ brand, model, price }) {
-  this.brand = brand;
-  this.model = model;
-  this.price = price;
+// function Car({ brand, model, price }) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+
+// Car.prototype.getPrice = function () {
+//   return this.price;
+// };
+
+// Car.prototype.changePrice = function (newPrice) {
+//   this.price = newPrice;
+// };
+
+// // Car({ brand, model, price });
+// // Car.prototype.hasOwnProperty("getPrice"); // возвращает true.
+
+// // console.log(Car.prototype.getPrice); // это функция.
+// // console.log(Car.prototype.hasOwnProperty("changePrice"));
+// // возвращает true.
+
+// // Значение Car.prototype.changePrice это функция.
+// const audi = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// console.log(`Price of ${audi.brand}:`, audi.getPrice());
+// console.log(audi);
+// //, вызов метода getPrice() вернет число 36000.
+
+// // У объекта, созданного вызовом new Car({ brand: 'Audi', model: 'Q3', price: 36000 }), вызов метода changePrice(35000) и последующем вызове getPrice() вернет число 35000.
+// // audi.changePrice(35000);
+// // console.log(`Price of ${audi.brand}:`, audi.getPrice());
+
+// === TASK 06 Задача. Хранилище ===
+
+// function Storage(items) {
+//   this.items = items;
+// }
+// Storage.prototype.getItems = function () {
+//   return this.items;
+// };
+// Storage.prototype.addItem = function (newItem) {
+//   return this.items.push(newItem);
+// };
+// Storage.prototype.removeItem = function (item) {
+//   return this.items.splice(this.items.indexOf(item), 1);
+// };
+
+// // Пиши код выше этой строки
+// const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+// // storage.addItem("Дроид");
+// // console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+// storage.removeItem("Пролонгер");
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+
+// // console.log(storage.items);
+// // console.log(storage.items[2]);
+
+// === TASK 07 Конструктор строк ===
+function StringBuilder(baseValue) {
+  this.value = baseValue;
 }
+StringBuilder.prototype.getValue = function () {
+  return this.value;
+};
+
+StringBuilder.prototype.padStart = function (str) {
+  console.log(`${str}${this.value}`);
+  return `${str}${this.value}`;
+};
+StringBuilder.prototype.padEnd = function (str) {
+  console.log(`${this.value}${str}`);
+  return `${this.value}${str}`;
+};
+StringBuilder.prototype.padBoth = function (str) {
+  console.log(`${str}${this.value}${str}`);
+  return `${str}${this.value}${str}`;
+};
+// Пиши код выше этой строки
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // '.'
+builder.padStart("^");
+console.log(builder.getValue()); // '^.'
+builder.padEnd("^");
+console.log(builder.getValue()); // '^.^'
+builder.padBoth("=");
+console.log(builder.getValue()); // '=^.^='
