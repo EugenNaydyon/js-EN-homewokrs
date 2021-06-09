@@ -126,23 +126,39 @@ StringBuilder.prototype.getValue = function () {
 };
 
 StringBuilder.prototype.padStart = function (str) {
-  console.log(`${str}${this.value}`);
-  return `${str}${this.value}`;
+  //console.log(`${str}${this.value}`);
+  this.value = `${str}${this.value}`;
+  //console.log(this.value);
+  //return `${str}${this.value}`;
 };
 StringBuilder.prototype.padEnd = function (str) {
-  console.log(`${this.value}${str}`);
-  return `${this.value}${str}`;
+  //console.log(`${this.value}${str}`);
+  //return `${this.value}${str}`;
+  this.value = `${this.value}${str}`;
 };
 StringBuilder.prototype.padBoth = function (str) {
-  console.log(`${str}${this.value}${str}`);
-  return `${str}${this.value}${str}`;
+  //console.log(`${str}${this.value}${str}`);
+  //return `${str}${this.value}${str}`;
+  this.value = `${str}${this.value}${str}`;
 };
 // Пиши код выше этой строки
 const builder = new StringBuilder(".");
-console.log(builder.getValue()); // '.'
+//console.log(builder.getValue()); // '.'
 builder.padStart("^");
 console.log(builder.getValue()); // '^.'
 builder.padEnd("^");
 console.log(builder.getValue()); // '^.^'
 builder.padBoth("=");
 console.log(builder.getValue()); // '=^.^='
+
+// === TASK 08 Объявление класса ===
+Задание
+Используя ключевое слово class объяви класс Car с пустым телом.
+
+Тесты
+Объявлен класс Car с пустым телом.
+Результат вызова new Car() это пустой объект.
+
+class Car { }
+
+// === TASK 09 Конструктор класса ===
