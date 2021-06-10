@@ -118,47 +118,145 @@
 // // console.log(storage.items[2]);
 
 // === TASK 07 Конструктор строк ===
-function StringBuilder(baseValue) {
-  this.value = baseValue;
-}
-StringBuilder.prototype.getValue = function () {
-  return this.value;
-};
+// function StringBuilder(baseValue) {
+//   this.value = baseValue;
+// }
+// StringBuilder.prototype.getValue = function () {
+//   return this.value;
+// };
 
-StringBuilder.prototype.padStart = function (str) {
-  //console.log(`${str}${this.value}`);
-  this.value = `${str}${this.value}`;
-  //console.log(this.value);
-  //return `${str}${this.value}`;
-};
-StringBuilder.prototype.padEnd = function (str) {
-  //console.log(`${this.value}${str}`);
-  //return `${this.value}${str}`;
-  this.value = `${this.value}${str}`;
-};
-StringBuilder.prototype.padBoth = function (str) {
-  //console.log(`${str}${this.value}${str}`);
-  //return `${str}${this.value}${str}`;
-  this.value = `${str}${this.value}${str}`;
-};
-// Пиши код выше этой строки
-const builder = new StringBuilder(".");
-//console.log(builder.getValue()); // '.'
-builder.padStart("^");
-console.log(builder.getValue()); // '^.'
-builder.padEnd("^");
-console.log(builder.getValue()); // '^.^'
-builder.padBoth("=");
-console.log(builder.getValue()); // '=^.^='
+// StringBuilder.prototype.padStart = function (str) {
+//   //console.log(`${str}${this.value}`);
+//   this.value = `${str}${this.value}`;
+//   //console.log(this.value);
+//   //return `${str}${this.value}`;
+// };
+// StringBuilder.prototype.padEnd = function (str) {
+//   //console.log(`${this.value}${str}`);
+//   //return `${this.value}${str}`;
+//   this.value = `${this.value}${str}`;
+// };
+// StringBuilder.prototype.padBoth = function (str) {
+//   //console.log(`${str}${this.value}${str}`);
+//   //return `${str}${this.value}${str}`;
+//   this.value = `${str}${this.value}${str}`;
+// };
+// // Пиши код выше этой строки
+// const builder = new StringBuilder(".");
+// //console.log(builder.getValue()); // '.'
+// builder.padStart("^");
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd("^");
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth("=");
+// console.log(builder.getValue()); // '=^.^='
 
-// === TASK 08 Объявление класса ===
-Задание
-Используя ключевое слово class объяви класс Car с пустым телом.
+// // === TASK 08 Объявление класса ===
+// Задание
+// Используя ключевое слово class объяви класс Car с пустым телом.
 
-Тесты
-Объявлен класс Car с пустым телом.
-Результат вызова new Car() это пустой объект.
+// Тесты
+// Объявлен класс Car с пустым телом.
+// Результат вызова new Car() это пустой объект.
 
-class Car { }
+// class Car { }
 
 // === TASK 09 Конструктор класса ===
+// function Car({ brand, model, price }) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// // == получится объект { brand: 'Audi', model: 'Q3', price: 36000 }.
+// console.log(audi);
+
+// const bmw = new Car({ brand: "BMW", model: "X5", price: 58900 });
+// // == получится объект { brand: 'BMW', model: 'X5', price: 58900 }.
+// console.log(bmw);
+
+// const nissan = new Car({ brand: "Nissan", model: "Murano", price: 31700 });
+// // == получится объект { brand: 'Nissan', model: 'Murano', price: 31700 }.
+// console.log(nissan);
+
+// === TASK 10 Методы класса ===
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getPrice() {
+//     return this.price;
+//   }
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+
+// // Объявлен класс Car.
+
+// // Конструктор класса принимает объект со свойствами brand, model и price.
+
+// console.log(Car.prototype.hasOwnProperty("getPrice")); //  возвращает true.
+
+// console.log(Car.prototype.getPrice); // Car.prototype.getPrice это функция.
+// console.log(Car.prototype.hasOwnProperty("changePrice")); // возвращает true.
+// console.log(Car.prototype.changePrice); //это функция.
+// const audiQ336kEURO = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// //вызов метода getPrice() вернет число 36000:
+// console.log(audiQ336kEURO);
+// console.log(audiQ336kEURO.getPrice());
+
+// //вызов метода changePrice(35000) и последующем вызове getPrice() вернет число 35000.
+// audiQ336kEURO.changePrice(35000);
+// console.log(audiQ336kEURO.getPrice());
+
+// === TASK 11 Приватные свойства ===
+// class Car {
+//   #brand;
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getBrand() {
+//     return this.#brand;
+//   }
+//   changeBrand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+// }
+
+// const audi = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// // получится объект { model: 'Q3', price: 36000 }.
+// console.log(audi);
+
+// const bmw = new Car({ brand: "BMW", model: "X5", price: 58900 });
+// //получится объект { model: 'X5', price: 58900 }.
+// console.log(bmw);
+
+// const nissan = new Car({ brand: "Nissan", model: "Murano", price: 31700 });
+// //получится объект { model: 'Murano', price: 31700 }.
+// console.log(nissan);
+
+// // У экземпляра нет публичного свойства brand.
+// // console.log(audi.#brand);
+
+// console.log(audi.getBrand());
+// // getBrand() возвращает значение приватного свойства brand.
+
+// // Метод changeBrand('Honda') изменяет значение приватного свойства brand на 'Honda'.
+// audi.changeBrand("Honda");
+// console.log(audi.getBrand());
+
+// === TASK 12 ===
