@@ -360,30 +360,87 @@
 
 // === TASK 15 Статические свойства ===
 
-class Car {
-  // Пиши код ниже этой строки
-  static MAX_PRICE = 10000;
-  #price;
+// class Car {
+//   // Пиши код ниже этой строки
+//   static MAX_PRICE = 50000;
+//   #price;
 
-  constructor({ price }) {
-    this.#price = price;
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice <= Car.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+//   // Пиши код выше этой строки
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// === TASK 16 Статические методы ===
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Пиши код ниже этой строки
+//   static checkPrice(price, message) {
+//     if (price <= Car.#MAX_PRICE) {
+//       return `Всё хорошо, цена в порядке. ${message}`;
+//     } else {
+//       return "Внимание! Цена превышает допустимую.";
+//     }
+//   }
+//   // Пиши код выше этой строки
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// // console.log(audi);
+// const bmw = new Car({ price: 64000 });
+// // console.log(bmw);
+
+// // console.log(Car.checkPrice(audi.price));
+// // Всё хорошо, цена в порядке.
+
+// // console.log(Car.checkPrice(bmw.price));
+// // Внимание! Цена превышает допустимую.
+
+// console.log(Car.checkPrice(36000, "AUDI"));
+// // возвращает строку 'Всё хорошо, цена в порядке.'.
+
+// console.log(Car.checkPrice(18000));
+// //возвращает строку 'Всё хорошо, цена в порядке.'.
+
+// // Вызов Car.checkPrice(64000) возвращает строку 'Внимание! Цена превышает допустимую.'.
+// // Вызов Car.checkPrice(57000) возвращает строку 'Внимание! Цена превышает допустимую.'.
+
+// === TASK 17 Наследование классов ===
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
   }
 
-  get price() {
-    return this.#price;
+  get email() {
+    return this.email;
   }
 
-  set price(newPrice) {
-    this.#price = newPrice;
+  set email(newEmail) {
+    this.email = newEmail;
   }
-  // Пиши код выше этой строки
 }
-
-const audi = new Car({ price: 35000 });
-console.log(audi.price); // 35000
-
-audi.price = 49000;
-console.log(audi.price); // 49000
-
-audi.price = 51000;
-console.log(audi.price); // 49000
+// Пиши код ниже этой строки
