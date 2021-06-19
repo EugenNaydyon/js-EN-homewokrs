@@ -538,6 +538,8 @@
 //====== TASK 19 Задача. Пользователи в возрастной категории ======
 // Пиши код ниже этой строки
 const getUsersWithAge = (users, minAge, maxAge) => {};
+
+TEST of GitHUB Desctop
 // Пиши код выше этой строки
 
 // const LOW_SCORE = 50;
