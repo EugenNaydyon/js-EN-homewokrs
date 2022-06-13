@@ -1,77 +1,95 @@
 // console.log("welcome to lesson 02");
 
-// ==== TASK 01 Ранний возврат ====
-function checkAge(age) {
-  if (age >= 18) {
-    // Change this line
-    return "You are an adult";
-  }
 
-  return "You are a minor";
-}
+function getExtremeElements(array) {
+
+        const firstElement = array[0];
+        const lastElement = array[array.length - 1];
+        // const newArray = arrayd[firstElement, lastElement];
+        console.log(array[0],[4]);
+        // return newArray;
+        
+        // Change code above this line
+      }
+
+      getExtremeElements([1, 2, 3, 4, 5]);  //возвращает [1, 5]
+      // getExtremeElements(["Earth", "Mars", "Venus"]); // возвращает ["Earth", "Venus"]
+      // getExtremeElements(["apple", "peach", "pear", "banana"]); // возвращает ["apple", "banana"]
+
+
+
+// ==== TASK 01 Ранний возврат ====
+// function checkAge(age) {
+//   if (age >= 18) {
+//     // Change this line
+//     return "You are an adult";
+//   }
+
+//   return "You are a minor";
+// }
 
 // =========================================================
 
 // ==== TASK 02 Задача: проверка пароля (ранний возврат) ====
-function checkPassword(password) {
-  const ADMIN_PASSWORD = "jqueryismyjam";
-  // Change code below this line
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   // Change code below this line
 
-  let message;
+//   let message;
 
-  if (password === ADMIN_PASSWORD) {
-    message = "Welcome!";
-  } else {
-    message = "Access denied, wrong password!";
-  }
+//   if (password === ADMIN_PASSWORD) {
+//     message = "Welcome!";
+//   } else {
+//     message = "Access denied, wrong password!";
+//   }
 
-  //optimisated
+//   //optimisated
 
-  return message;
-  // Change code above this line
-}
+//   return message;
+//   // Change code above this line
+// }
 
-function checkPassword(password) {
-  const ADMIN_PASSWORD = "jqueryismyjam";
-  // Change code below this line
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   // Change code below this line
 
-  if (password === ADMIN_PASSWORD) {
-    return "Welcome!";
-  }
+//   if (password === ADMIN_PASSWORD) {
+//     return "Welcome!";
+//   }
 
-  return "Access denied, wrong password!";
-}
+//   return "Access denied, wrong password!";
+// }
 // ===============================================================
 
 // ==== TASK 03 Задача: склад товаров 3.0 ====
-function checkStorage(available, ordered) {
-  // Change code below this line
-  let message;
+// function checkStorage(available, ordered) {
+//   // Change code below this line
+//   let message;
 
-  if (ordered === 0) {
-    message = "Your order is empty!";
-  } else if (ordered > available) {
-    message = "Your order is too large, not enough goods in stock!";
-  } else {
-    message = "The order is accepted, our manager will contact you";
-  }
+//   if (ordered === 0) {
+//     message = "Your order is empty!";
+//   } else if (ordered > available) {
+//     message = "Your order is too large, not enough goods in stock!";
+//   } else {
+//     message = "The order is accepted, our manager will contact you";
+//   }
 
-  return message;
-  // Change code above this line
-}
+//   return message;
+//   // Change code above this line
+// }
 
 // ======== refactoring
-function checkStorage(available, ordered) {
-  // Change code below this line
+// function checkStorage(available, ordered) {
+//   // Change code below this line
 
-  if (ordered === 0) {
-    return "Your order is empty!";
-  }
-  if (ordered > available) {
-    return "Your order is too large, not enough goods in stock!";
-  }
-  return "The order is accepted, our manager will contact you";
-}
+//   if (ordered === 0) {
+//     return "Your order is empty!";
+//   }
+//   if (ordered > available) {
+//     return "Your order is too large, not enough goods in stock!";
+//   }
+//   return "The order is accepted, our manager will contact you";
+// }
 
 // ==== TASK 04 Создание массива ====
 // const fruits = ["apple", "plum", "pear", "orange"];
@@ -516,3 +534,4 @@ function checkStorage(available, ordered) {
 // includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"); // возвращает false
 // includes(["apple", "plum", "pear", "orange"], "plum"); // возвращает true
 // includes(["apple", "plum", "pear", "orange"], "kiwi"); // возвращает false
+
